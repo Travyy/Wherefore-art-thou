@@ -1,0 +1,19 @@
+function whatIsInAName(collection, source) {
+  var arr = [];
+  var srcProp = Object.keys(source);
+  
+  arr = collection.filter(function(val)  {
+    for (i = 0; i < srcProp.length; ++i)  {
+      if (!val.hasOwnProperty(srcProp[i]))  {
+        return false;
+      } else  {
+          if (val[srcProp[i]] != source[srcProp[i]])  {
+            return false;
+          } //exit if
+        } //exit else
+      } //exit for (if neither of the two tests fail, return the value
+    return val; //if the val makes it to here, it passed.
+  });
+  
+  return arr;
+}
